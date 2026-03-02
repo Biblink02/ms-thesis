@@ -53,10 +53,10 @@
     \pagenumbering{roman}
     \pagestyle{empty}
 
-    \input{chapters/frontespizio}
+    \input{tex/titlepage}
     \cleardoublepage
 
-    \input{chapters/dedica}
+    \input{tex/dedication}
     \cleardoublepage
 
     \pagestyle{plain}
@@ -73,8 +73,7 @@
 
     \pagenumbering{arabic}
 
-    \input{chapters/samplechapter}
-    \cleardoublepage
+    \input{tex/chapters-wrapper}
 
     \printbibliography[heading=bibintoc]
 
