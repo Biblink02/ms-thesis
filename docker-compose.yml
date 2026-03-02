@@ -10,6 +10,7 @@ services:
       -shell-escape
       -interaction=nonstopmode
       -outdir=output
+      -auxdir=output/logs
       -pvc
       main.tex
     restart: unless-stopped
