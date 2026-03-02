@@ -1,0 +1,47 @@
+\begin{titlepage}
+    % Only the title page must have symmetric inner and outer margins
+    \newgeometry{hmargin=2.5cm,vmargin=2cm}
+        \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{images/logo_unipd}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{images/logo_dei}
+            \end{subfigure}
+        \end{figure}
+
+        \vspace*{\stretch{0.5}}
+
+        \begin{center}
+            \makeatletter % needed to use \@...
+
+            % NOTE: Times New Roman does not support small caps properly.
+            \textsc{DEPARTMENT OF INFORMATION ENGINEERING}\\
+            \vspace*{\stretch{0.1}}
+            \textsc{BACHELOR'S / MASTER'S DEGREE IN ENGINEERING ...}
+
+            \vspace*{\stretch{0.5}}
+            \LARGE
+            \textbf{\@title}
+
+            \vspace*{\stretch{1}}
+            \normalsize
+            \begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
+                \textbf{Supervisor} & \textbf{Candidate} \\
+                \supervisor         & \@author           \\
+                \\
+                \textbf{Co-supervisor} \\
+                \assistantsupervisor \\
+            \end{tabular*}
+
+            \vspace*{\stretch{2}}
+            \textsc{ACADEMIC YEAR 20XX-20XY} \\
+            \vspace*{\stretch{0.1}}
+            Graduation Date \@date
+
+            \makeatother % needed after \makeatletter
+        \end{center}
+    \restoregeometry
+\end{titlepage}

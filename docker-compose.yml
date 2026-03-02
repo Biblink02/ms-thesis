@@ -1,0 +1,15 @@
+services:
+  latex:
+    image: texlive/texlive:latest
+    volumes:
+      - ./:/data
+    working_dir: /data
+    command: >
+      latexmk
+      -lualatex
+      -shell-escape
+      -interaction=nonstopmode
+      -outdir=output
+      -pvc
+      main.tex
+    restart: unless-stopped

@@ -1,0 +1,81 @@
+% University formatting requirements:
+% https://stem.elearning.unipd.it/mod/book/view.php?id=234&chapterid=46#modalita
+% 12pt: required font size
+% twoside: inner and outer margins swapped for left/right pages
+% openright: chapters start on odd pages
+% extreport: supports 12pt
+\documentclass[12pt,a4paper,twoside,openright]{extreport}
+
+\usepackage{amsmath}                            % better control of equations
+\usepackage{enumitem}                           % better control of lists
+\usepackage[
+    a4paper,
+    top=2cm,bottom=2cm,
+    outer=2cm,inner=3cm,
+    includeheadfoot
+]{geometry}                                     % required margins
+\usepackage{graphicx}                           % images
+\usepackage{icomma}                             % decimal comma handling
+\usepackage{minted}                             % syntax highlighted code
+\usepackage[a-1a]{pdfx}                         % required PDF/A format
+\usepackage[output-decimal-marker={.}]{siunitx} % units
+\usepackage{subcaption}                         % subcaptions
+\usepackage{svg}                                % SVG support
+
+\usepackage[english]{babel}
+\selectlanguage{english}
+
+\usepackage{csquotes}
+
+
+\usepackage{setspace}
+\onehalfspacing                                  % required line spacing
+
+\sloppy                                          % avoid overfull \verb issues
+
+% Bibliography (better with biber)
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{bibliografia.bib}
+
+% Font (requires LuaLaTeX or XeLaTeX)
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+
+% These values are used in the title page
+\title{Thesis Title}
+\author{Name Surname}
+\date{DD/MM/YYYY}
+\newcommand{\supervisor}{Prof. Name Surname}
+\newcommand{\assistantsupervisor}{Name Surname}
+
+\begin{document}
+
+    \pagenumbering{roman}
+    \pagestyle{empty}
+
+    \input{chapters/frontespizio}
+    \cleardoublepage
+
+    \input{chapters/dedica}
+    \cleardoublepage
+
+    \pagestyle{plain}
+
+    \chapter*{Abstract}
+    Description of the thesis objective.
+    \cleardoublepage
+
+    \tableofcontents
+    \cleardoublepage
+
+    \listoffigures
+    \cleardoublepage
+
+    \pagenumbering{arabic}
+
+    \input{chapters/samplechapter}
+    \cleardoublepage
+
+    \printbibliography[heading=bibintoc]
+
+\end{document}
